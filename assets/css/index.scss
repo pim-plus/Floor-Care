@@ -113,6 +113,7 @@ b, strong{
     max-width: 1920px;
     width: 100%;
     padding: 0 60px;
+    overflow-x: hidden;
 
     @media(max-width: $md){
         padding: 0 30px;
@@ -252,6 +253,63 @@ b, strong{
     .left{
         width: 20%;
 
+        .btn-close-sidebar{
+            text-align: right;
+            @media(min-width: 1201px){
+                display: none;
+            }
+        }
+
+        @media(max-width: 1200px){
+            position: fixed;
+            z-index: 105;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0px 12px 24px 0px rgb(120 120 120 / 30%);
+            padding: 50px 30px;
+            width: 100%;
+            max-width: 400px;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateX(-100%);
+            will-change: transform;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+
+            .ver_scroll_container{
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            .ver_scroll{
+                overflow-y: auto;
+                height: 100%;
+                padding-right: 30px;
+
+
+                &::-webkit-scrollbar {
+                    width: 2px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: black;
+                }
+
+               &::-webkit-scrollbar-track {
+                    background-color: gray;
+                }
+            }
+
+            &.active{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+
         .sidebar_title{
             font-size: 24px;
             font-weight: 500;
@@ -381,12 +439,12 @@ b, strong{
             }
         }
 
-
-
-
     }
     .right{
         width: 80%;
+        @media(max-width: 1200px){
+            width: 100%;
+        }
 
         .banner{
             margin-bottom: 40px;
@@ -579,10 +637,50 @@ b, strong{
             }
    
 
+        .products_navigations{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+
+            .open-fixed-sidebar{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                @media(min-width: 1201px){
+                    display: none;
+                }
+            }
+
+            svg{
+                max-width: 20px;
+                max-height: 20px;
+            }
+        }
+
         .products{
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            
+            .product{
+
+                @media(max-width: $md){
+                    max-width: 48%;
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                @media(max-width: $sm){
+                    max-width: 100%;
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
 
             svg{
                 width: 20px;

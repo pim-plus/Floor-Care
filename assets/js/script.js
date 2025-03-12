@@ -17,4 +17,12 @@ $('.select2').select2({
         $(this).toggleClass('active');
         $(this).closest('.widget').find('.widget_content').stop().slideToggle();
     });
+    $('.svgFilter').click(function (e) {
+        e.preventDefault();
+        $('#shop_section .left').toggleClass('active');
+    });
+    $('.btn-close-sidebar svg').click(function (e) {
+        e.preventDefault();
+        $('#shop_section .left').toggleClass('active');
+    });
 });
