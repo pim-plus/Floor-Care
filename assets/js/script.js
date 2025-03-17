@@ -1,10 +1,13 @@
-document.querySelector('button.term-description-toggle')?.addEventListener('click', e => {
-    const targetEl = document.querySelector('#description');
-    if(targetEl.classList.contains('active')){
-        targetEl.classList.remove('active')
-    }else{
-        targetEl.classList.add('active')
-    }
+document.querySelectorAll('.tab_title').forEach(el => {
+    el.addEventListener('click', e => {
+        const currentEl = e.target;
+        const targetEl = currentEl.closest('.tab');
+        if(targetEl.classList.contains('active')){
+            targetEl.classList.remove('active')
+        }else{
+            targetEl.classList.add('active')
+        }
+    })
 })
 
 $('.select2').select2({
