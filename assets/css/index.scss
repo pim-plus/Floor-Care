@@ -723,10 +723,31 @@ b, strong{
 }
 
 // Single Product Page Starts From Here
+#product_navigation{
+    margin: 40px 0;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        a{
+            font-size: 20px;
+            font-weight: 400;
+            padding: 8px 15px;
+            background-color: #A5CEF2;
+            border-radius: 25px;
+            display: block;
+        }
+    }
+}
+
+
 #product_main{
     display: flex;
     gap: 30px;
     margin-top: 100px;
+    margin-bottom: 70px;
 
     @media(max-width: $lg){
         flex-wrap: wrap;
@@ -786,7 +807,7 @@ b, strong{
         .complete_connection{
             width: calc(70% + 20px);
             margin-left: auto;
-            @media(max-width: $sm){
+            @media(max-width: $md){
                 width: 100%;
             }
             h5{
@@ -906,4 +927,95 @@ b, strong{
 
     }
     
+}
+
+#compare_hose{
+    margin-bottom: 80px;
+    h2{
+        width: calc(85% + 20px);
+        margin-left: auto;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        @media(max-width: $md){
+            width: 100%;
+        }
+    }
+    .products{
+        width: calc(85% + 20px);
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        @media(max-width: $md){
+            width: 100%;
+            flex-wrap: wrap;
+            gap: unset;
+
+            .product{
+                padding: 10px;
+                flex: 0 0 50%;
+            }
+        }
+
+
+
+        img{
+            width: 100%;
+            border-radius: 26px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        h3{
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
+
+#product_meta{
+    ul{
+        list-style: none;
+
+        li{
+            padding: 10px;
+            &:nth-child(odd){
+                background-color: #F6F7F7;
+            }
+            span{
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+#call_to_action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    flex-wrap: wrap;
+
+    .left{
+
+        span{
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #6f6f6f;
+        }
+
+        a{
+            display: block;
+            font-size: 32px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: black;
+            margin: 10px 0;
+        }
+    }
 }
